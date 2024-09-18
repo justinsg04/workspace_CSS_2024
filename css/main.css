@@ -1,0 +1,38 @@
+/* style file created by Justin Glover
+======================================
+00: css variable
+01: color
+02: Typography
+
+======================================
+*/
+
+/* 00 css variable */
+
+/* 01 Color */
+:root{
+    --body-color: hsla(359, 42%, 35%,0.8);
+    --page-color: hsla(0, 0%, 100%, 0.274);
+    --sidebar-color: hsla(189, 32%, 91%,0.4);
+    /** font color**/
+    --font-color: hsla(0,12%,32%,0);
+    /** h1 color -- practice **/
+    --h1-color: hsla(77, 100%, 48%, 0.4);
+}
+
+body{
+    background: var(--body-color);
+}
+#zen-intro{
+    background-color: var(--page-color);
+    color: var(--font-color);
+}
+#zen-supporting{
+    background-color: var(--body-color);
+}
+.sidebar{
+    background-color: var(--sidebar-color);
+}
+h1{
+    background-color: var(--h1-color);
+}
