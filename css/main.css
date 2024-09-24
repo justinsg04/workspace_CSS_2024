@@ -12,27 +12,80 @@
 /* 01 Color */
 :root{
     --body-color: hsla(359, 42%, 35%,0.8);
-    --page-color: hsla(0, 0%, 100%, 0.274);
-    --sidebar-color: hsla(189, 32%, 91%,0.4);
+    --page-color: hsla(0, 0%, 100%, 0.9);
+    --sidebar-color: rgba(191, 164, 99,);
     /** font color**/
-    --font-color: hsla(0,12%,32%,0);
+    --font-color: rgb(2, 17, 22);
     /** h1 color -- practice **/
-    --h1-color: hsla(77, 100%, 48%, 0.4);
+    --h1-color: hsla(0, 7%, 33%, 0.4);
+    /** layout variables **/
+    --page-top-position: 85%;
+    --page-width: 30%;
+    --bottom-bar-height: 15vh;
+    --bottom-bar-color: hsla(27,43%,55%,1);
 }
 
 body{
     background: var(--body-color);
 }
 #zen-intro{
-    background-color: var(--page-color);
+    background-color: var(--sidebar-color);
     color: var(--font-color);
 }
 #zen-supporting{
-    background-color: var(--body-color);
+    background-color: var(--page-color);
 }
 .sidebar{
     background-color: var(--sidebar-color);
 }
 h1{
     background-color: var(--h1-color);
+}
+
+/*02 Layout*/
+div.explanation, div.requirement, div.benefits, div.participation{
+    position: fixed;
+    width: var(--page-width);
+    top: var(--page-top-position);
+    background-image: url(../img/newspaper3.jpg);
+}
+
+div.explanation{
+    left:0%;
+}
+div.requirement{
+    left:15%;
+}
+div.benefits{
+    left:30%;
+}
+div.participation{
+    left:40%;
+}
+
+aside.sidebar{
+    position:absolute;
+    top:20%;
+    right:0;
+    bottom: 0;
+    /*adjust width/height */
+    width: 20%;
+    height: 100%;
+}
+section.intro{
+    position: fixed;
+    left: 30%;
+    bottom: 5%;
+    width: 30%;
+    height: 80%;
+    background-image: url(../img/newspaper1.jpg);
+}
+
+div.extra2{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: var(--bottom-bar-height);
+    background-color: var(--bottom-bar-color);
 }
