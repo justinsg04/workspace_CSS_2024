@@ -13,7 +13,7 @@
 :root{
     --body-color: hsla(359, 42%, 35%,0.8);
     --page-color: hsla(0, 0%, 100%, 0.9);
-    --sidebar-color: rgba(191, 164, 99,);
+    --sidebar-color: rgba(191, 164, 99);
     /** font color**/
     --font-color: rgb(2, 17, 22);
     /** h1 color -- practice **/
@@ -79,6 +79,10 @@ section.intro{
     width: 30%;
     height: 80%;
     background-image: url(../img/newspaper1.jpg);
+    padding: 4px;
+    border: 2px dashed rgb(39, 34, 34);
+    margin-left: 300px;
+    text-indent: 0%;
 }
 
 div.extra2{
@@ -89,3 +93,65 @@ div.extra2{
     height: var(--bottom-bar-height);
     background-color: var(--bottom-bar-color);
 }
+
+/*create tabs for the folder*/
+div.explanation h3, div.requirement h3, div.benefits h3, div.participation h3{
+    margin-top: -5%;
+    left: 10vw;
+    width: 15vw;
+    height: 10vvw;
+    left: 15vw;
+    background-color: beige;
+}
+
+
+div.extra1{
+    position: fixed;
+    left: 20%;
+    bottom: 5%;
+    width: 30%;
+    height: 80%;
+    background-image: url(../img/newspaper2.jpg);
+    z-index: -1;
+}
+
+/**003: Typography **/
+@font-face {
+    font-family: 'myfont';
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1{
+    font-family: 'myfont',sans-serif;
+    font-weight: 100;
+    font-size: 1.75em;
+    letter-spacing: normal;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+
+header h2{
+    font-family: 'Moderustic',sans-serif;
+    font-weight: 250;
+    font-size: 1.5em;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+#design-selection h3{
+    visibility: hidden;
+}
+#design-archives{
+    visibility: hidden;
+}
+#zen-resources{
+    visibility: hidden;
+}
+
