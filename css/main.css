@@ -22,7 +22,7 @@
     --page-top-position: 85%;
     --page-width: 30%;
     --bottom-bar-height: 15vh;
-    --bottom-bar-color: hsla(27,43%,55%,1);
+    --bottom-bar-color: rgb(194, 157, 127);
 }
 
 body{
@@ -43,24 +43,26 @@ h1{
 }
 
 /*02 Layout*/
-div.explanation, div.requirement, div.benefits, div.participation{
+div.explanation, div.requirements, div.benefits, div.participation{
     position: fixed;
     width: var(--page-width);
     top: var(--page-top-position);
     background-image: url(../img/newspaper3.jpg);
+    /* transition */
+    transition: all 2s ease-in-out;
 }
 
 div.explanation{
-    left:0%;
+    left:1%;
 }
-div.requirement{
-    left:15%;
+div.requirements{
+    left:10vw;
 }
 div.benefits{
-    left:30%;
+    left:36vw;
 }
 div.participation{
-    left:40%;
+    left:40vw;
 }
 
 aside.sidebar{
@@ -79,10 +81,12 @@ section.intro{
     width: 30%;
     height: 80%;
     background-image: url(../img/newspaper1.jpg);
-    padding: 4px;
+    padding: 2%;
     border: 2px dashed rgb(39, 34, 34);
-    margin-left: 300px;
-    text-indent: 0%;
+    margin-left: 10px;
+    text-indent: 1px;
+    transform: rotate(-10edg) translate(-100px, 10);
+
 }
 
 div.extra2{
@@ -95,14 +99,24 @@ div.extra2{
 }
 
 /*create tabs for the folder*/
-div.explanation h3, div.requirement h3, div.benefits h3, div.participation h3{
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    position: absolute;
     margin-top: -5%;
-    left: 10vw;
-    width: 15vw;
-    height: 10vvw;
-    left: 15vw;
-    background-color: beige;
+    width:12vw;
 }
+div.explanation{
+    left: 0%;
+}
+div.requirements{
+    left: 20%;
+}
+div.benefits{
+    left: 40%;
+}
+div.participation{
+    left: 60%;
+}
+
 
 
 div.extra1{
@@ -113,6 +127,7 @@ div.extra1{
     height: 80%;
     background-image: url(../img/newspaper2.jpg);
     z-index: -1;
+    transform: rotate(15deg) translate(200px, -100px);
 }
 
 /**003: Typography **/
@@ -124,7 +139,7 @@ div.extra1{
 header h1{
     font-family: 'myfont',sans-serif;
     font-weight: 100;
-    font-size: 1.75em;
+    font-size: 1.25em;
     letter-spacing: normal;
     line-height: 1em;
     text-transform: uppercase;
@@ -155,3 +170,96 @@ li{
     visibility: hidden;
 }
 
+
+/* 04, selector practice, transform, transition, .... */
+a:hover{
+    font-size: 1em;
+}
+div.explanation:active{
+    top: 15vh;
+    height: 90vh;
+}
+div.participation:active{
+    top: 15vh;
+    height: 90vh;
+}
+div.benefits:active{
+    top: 15vh;
+    height: 90vh;
+}
+div.requirements:active{
+    top: 15vh;
+    height: 90vh;
+}
+p::first-letter{
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+p:nth-child(2n){
+    background-color: darkgoldenrod;
+}
+
+p:nth-child(2n+1){
+    background-color: steelblue;
+}
+
+li:first-of-type{
+    color: aqua;
+}
+
+/** Try one text shadow **/
+h3{
+    text-shadow: 2px 2px #333;
+
+}
+
+/* Border radius for the tab */
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    border-top-right-radius: 15px;
+    background-color: rgb(194, 157, 127);
+    border-top: solid blue;
+    padding-left: 5px;
+}
+
+/* list style image */
+ul{
+    list-style-image: url(../img/star.png);
+}
+
+/* transform and transition */
+section.intro h3 ~p{
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+
+section.intro h3:hover ~p{
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+@keyframes backandforth{
+    from{transform: translate(-500px,0);}
+    30%{transform: translate(-300ox,0);}
+    50%{transform: translate(300ox,0);}
+    70%{transform: translate(500ox,0);}
+    90%{transform: translate(-300ox,0);}
+}
+
+footer{
+    position: fixed;
+    bottom: 5vh;
+    left: 50%;
+    z-index: 15;
+    animation: 10s ease-in-out 2s alternate infinite backandforth;
+}
+
+/* 05 fun feature */
+/* body{
+    clip-path: circle(60% at 50vw 50vh);
+} */
+
+aside.sidebar{
+    clip-path: polygon(0 0, 0 37%, 50% 65%, 100% 40%, 100% 0);
+}
